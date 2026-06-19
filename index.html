@@ -8,12 +8,46 @@
 </head>
 <body>
   <div class="image-card">
-    <img src="image/COVER.jpg" alt="SLWDSPDP COVER" class="cover">
-    <h1 class="track-title">
-      <span class="track-icon">🎵</span>
-      Underwater Love <span class="track-version">(Sped Up)</span>
+    <!-- Обложка -->
+    <img src="image/COVER.jpg" alt="SLWDSPDP COVER" class="cover" id="cover">
+    <!-- Заголовок текущего трека -->
+    <h1 class="track-title" id="currentTrack">
+      <span class="track-icon" id="trackIcon">🎵</span>
+      <span id="trackName">Underwater Love</span>
+      <span class="track-version" id="trackVersion">(Sped Up)</span>
     </h1>
-    <audio src="audio/Underwater Love (Sped Up).mp3" controls></audio>
+    <!-- Прогресс-бар -->
+    <div class="progress-container">
+      <span class="time current-time" id="currentTime">0:00</span>
+      <div class="progress-bar" id="progressBar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="time total-time" id="totalTime">0:00</span>
+    </div>
+    <!-- Элементы управления -->
+    <div class="controls">
+      <button class="control-btn" id="prevBtn" title="Предыдущий">⏮</button>
+      <button class="control-btn play-btn" id="playBtn" title="Play/Pause">▶</button>
+      <button class="control-btn" id="nextBtn" title="Следующий">⏭</button>
+      <button class="control-btn" id="loopBtn" title="Повтор">🔁</button>
+      <button class="control-btn" id="volumeBtn" title="Громкость">🔊</button>
+      <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.8">
+    </div>
+    <!-- Плейлист -->
+    <div class="playlist">
+      <div class="playlist-item active" data-index="0">
+        <span class="playlist-number">1</span>
+        <span class="playlist-title">Underwater Love</span>
+        <span class="playlist-version">(Sped Up)</span>
+        <span class="playlist-duration" id="duration0">3:45</span>
+      </div>
+      <div class="playlist-item" data-index="1">
+        <span class="playlist-number">2</span>
+        <span class="playlist-title">Fruits & Passion</span>
+        <span class="playlist-version">(Downtempo Slowed Mix)</span>
+        <span class="playlist-duration" id="duration1">4:20</span>
+      </div>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
